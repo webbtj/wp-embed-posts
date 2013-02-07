@@ -57,8 +57,9 @@ class WPEmbedPosts{
         if($post->ID==$id)
             return;
         global $wp_embed_post_ids;
-        if(in_array($id, $wp_embed_post_ids))
-            return;
+        if(is_array($wp_embed_post_ids))
+            if(in_array($id, $wp_embed_post_ids))
+                return;
         $wp_embed_post_ids[] = $id;
         if($id){
             $post_obj = get_post($id);
