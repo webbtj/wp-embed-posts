@@ -19,15 +19,13 @@ full control over how any given embeded post is rendered.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
 1. Extract wp-embed-posts.zip
 2. Upload `wp-embed-posts/` to the `/wp-content/plugins/` directory
 3. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
 
-= Can I embed any post type =
+= Can I embed any post type? =
 
 Yes, by default you can embed posts and pages. Go to Embed Post Options under the Settings tab of the admin menu to enable/disable other post types.
 
