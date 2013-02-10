@@ -15,7 +15,8 @@
 			ed.addCommand('mcewpembedposts', function() {
 				console.log(window);
 				ed.windowManager.open({
-					file : url + '/window.php?id='+this.id,
+					//file : url + '/window.php?id='+this.id,
+					file : '/wp-admin/admin-ajax.php?action=wp_embed_posts_ajax&id='+this.id,
 					width : 400 + ed.getLang('wpembedposts.delta_width', 0),
 					height : 120 + ed.getLang('wpembedposts.delta_height', 0),
 					inline : 1

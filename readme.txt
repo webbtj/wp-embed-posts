@@ -4,7 +4,7 @@ Donate link: http://webb.tj/
 Tags: admin, posts, embed
 Requires at least: 3.5
 Tested up to: 3.5
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,3 +45,6 @@ If one post embeds another which embeds the first post, the first post will be r
 
 = 1.0 =
 * Initial Release
+
+= 1.0.1 =
+* Changed to use admin-ajax.php to display window (instead of requiring wp-load.php)

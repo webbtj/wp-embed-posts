@@ -26,7 +26,7 @@ class WPEmbedPosts{
     }
 
     public static function add_plugin($plugin_array) {
-        $plugin_array['wpembedposts'] = plugins_url('wp-embed-posts') . '/editor_plugin.js';
+        $plugin_array['wpembedposts'] = plugins_url('wp-embed-posts') . '/editor_plugin.js?v=0.0.2';
         return $plugin_array;
     }
 
@@ -117,6 +117,11 @@ class WPEmbedPosts{
         </div>
         <?php
     }
+
+    public static function render_window(){
+        include(plugin_dir_path(__FILE__) . 'window.php');
+        exit();
+    }
 }
 
 add_action('init', array('WPEmbedPosts', 'add_mce_button'));
@@ -124,6 +129,7 @@ add_action('admin_init', array('WPEmbedPosts', 'settings_enabled_init'));
 add_action('admin_menu', array('WPEmbedPosts', 'settings_enabled_submenu'));
 add_shortcode('embedpost', array('WPEmbedPosts', 'short_code'));
 register_activation_hook(__FILE__, array('WPEmbedPosts', 'activate'));
+add_action('wp_ajax_wp_embed_posts_ajax', array('WPEmbedPosts', 'render_window'));
 
 /*add_filter('wpembed_content', 'test_func', 10, 3);
 function test_func($output, $post_obj, $post_type){
